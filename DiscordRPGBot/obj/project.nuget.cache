@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PMtwZNw8b8SyD43Lz7oGt1vON+jghcvMT5cSDo2Esa7o9xYipYfq+jJhcV/r6Ky1U3SXfdrlFCZxau//2DK8JA==",
+  "dgSpecHash": "m3dNk/igO/AV5cWuYZ5IA+3AC6GlAxdEUBxSyfhG7Sp9yEbCdhIhhgknsmaTnqew56KAC6QRJXMwhCOceAqL9w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PenguinOfLite\\source\\repos\\DiscordRPGBot\\DiscordRPGBot\\DiscordRPGBot.csproj",
+  "projectFilePath": "C:\\Users\\PenguinOfLite\\source\\repos\\DiscordRPGBot igen\\DiscordRPGBot\\DiscordRPGBot\\DiscordRPGBot.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PenguinOfLite\\.nuget\\packages\\discord.net\\2.2.0\\discord.net.2.2.0.nupkg.sha512",
     "C:\\Users\\PenguinOfLite\\.nuget\\packages\\discord.net.commands\\2.2.0\\discord.net.commands.2.2.0.nupkg.sha512",

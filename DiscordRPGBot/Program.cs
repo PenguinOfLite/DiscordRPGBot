@@ -79,20 +79,20 @@ namespace DiscordRPGBot
                     message.Channel.SendMessageAsync(Program.activeAdventure.DisplayTiles());
                     break;
                 case "n":
-                    activeAdventure.Move(DIRECTION.UP);
-                    message.Channel.SendMessageAsync(Program.activeAdventure.DisplayTiles());
+                    message.Channel.SendMessageAsync(activeAdventure.Move(DIRECTION.UP));
+                    
                     break;
                 case "s":
-                    activeAdventure.Move(DIRECTION.DOWN);
-                    message.Channel.SendMessageAsync(Program.activeAdventure.DisplayTiles());
+                    message.Channel.SendMessageAsync(activeAdventure.Move(DIRECTION.DOWN));
+                    
                     break;
                 case "w":
-                    activeAdventure.Move(DIRECTION.LEFT);
-                    message.Channel.SendMessageAsync(Program.activeAdventure.DisplayTiles());
+                    message.Channel.SendMessageAsync(activeAdventure.Move(DIRECTION.LEFT));
+                    
                     break;
                 case "e":
-                    activeAdventure.Move(DIRECTION.RIGHT);
-                    message.Channel.SendMessageAsync(Program.activeAdventure.DisplayTiles());
+                    message.Channel.SendMessageAsync(activeAdventure.Move(DIRECTION.RIGHT));
+                   ;
                     break;
                 case "xd": message.Channel.SendMessageAsync("XDLMAO420");
                     break;
@@ -108,195 +108,13 @@ namespace DiscordRPGBot
             
         }
 
-        public static void No()
+        public static string No()
         {
-            lastMessage.Channel.SendMessageAsync("NO! I WON'T! :rage:");
+           return "NO! I WON'T! :rage:";
         }
     }
 
-    public class Adventure
-    {
-        const int size = 5;
-        Tile[,] tiles;
-        Tile activeTile;
-        Vector2 position;
-        
-        public Vector2 Position
-        {
-            get { return position; }
-            set {
-                position = value;
-                activeTile = tiles[(int)position.X, (int)position.Y];
-            }
-        }
-        List<Tile> acccessibleTiles;
-        public Adventure()
-        {
-            tiles = new Tile[size, size];  //x,y
-            for (int i = 0; i < size; i++)
-            {
-                for (int j = 0; j < size; j++)
-                {
-                    tiles[i, j] = Tile.GenerateTile();
-                }
-            }
-            activeTile = tiles[2,2];
-            position = new Vector2(2,2);
-            activeTile.visited = true;
-
-        }
-
-        public void Move(DIRECTION direction)
-        {
-            Tile destinationTile = Tile.GenerateTile(); //csak hogy elinduljon
-            if (direction == DIRECTION.UP)
-            {
-                if (position.Y < size - 1)
-                {
-                    destinationTile = tiles[(int)position.X, (int)position.Y + 1];
-                    Position += new Vector2(0, 1);
-                }
-                else { Program.No(); }
-
-            }
-            else if (direction == DIRECTION.LEFT)
-            {
-                if (Position.X > 0)
-                {
-                    destinationTile = tiles[(int)position.X - 1, (int)position.Y];
-                    Position += new Vector2(-1, 0);
-                }
-                else { Program.No(); }
-            }
-            else if (direction == DIRECTION.DOWN)
-            {
-                if (position.Y > 0)
-                {
-                    destinationTile = tiles[(int)position.X, (int)position.Y + -1];
-                    Position += new Vector2(0, -1);
-                }
-                else { Program.No(); }
-            }
-            else if (direction == DIRECTION.RIGHT)
-            {
-                if (Position.X < size-1)
-                {
-                    destinationTile = tiles[(int)position.X + 1, (int)position.Y];
-                    Position += new Vector2(1, 0);
-                }
-                else { Program.No(); }
-            
-            }
-            destinationTile.visited = true;
-        }
-
-
-
-        List<Tile> GetAccessibleTiles()
-        {
-            List<Tile> yes = new List<Tile>();
-
-           
-
-
-            return yes;
-        }
-
-        public string DisplayTiles()
-        {
-            string s = "";
-            string tile;
-            for (int j = size-1; j >= 0; j--)
-            {
-                for (int i = 0; i <size; i++)
-                {
-                    if (tiles[i, j] == activeTile)
-                    {
-                        tile = ":flushed:";
-                    }
-                    else if (tiles[i, j].visited == false) { tile = ":black_large_square:"; }
-                    else
-                    {
-                        switch (tiles[i, j].type.ToString())
-                        {
-                            case "XD":
-                                tile = ":homes:";
-                                break;
-                            case "FOREST":
-
-                                tile = ":evergreen_tree:";
-                                break;
-                            case "FIELD":
-                                tile = ":green_circle:";
-                                break;
-                            default:
-                                tile = "[]";
-                                break;
-
-                        }
-                    }
-                    
-                    s += tile;
-                }
-                s += "\n";
-            }
-            return s+"\nCurrent tile: " + activeTile.type.ToString();
-        }
-    }
-
-    public class Tile
-    {
-        public string name;
-        public string description;
-        public TILETYPES type;
-        public bool[] routes = new bool[4]; //N, W, S, E
-        public bool visited;
-
-        public Tile(string n,string d, TILETYPES t)
-        {
-            name = n;
-            description = d;
-            type = t;
-            visited = false;
-
-
-            for (int i = 0; i < 4; i++)
-            {
-                Random r = new Random();
-                routes[i] = Convert.ToBoolean(r.Next(0,2));
-            }
-            
-        }
-
-        public static Tile GenerateTile()
-        {
-            Random r = new Random();
-            TILETYPES[] types = { TILETYPES.FIELD, TILETYPES.FOREST, TILETYPES.XD };
-            return new Tile("","",types[r.Next(0,3)]);
-        }
-        
-        public void OnFirstEnter()
-        { 
-            
-        }
-
-        public void OnEnter()
-        { 
-            
-        }
-        
-    }
-
-    public enum TILETYPES
-    { 
-        FOREST, FIELD, XD
-       
-    }
-
-    public enum DIRECTION
-    { 
-        UP, LEFT, DOWN, RIGHT
-    }
+    
         
 
 }

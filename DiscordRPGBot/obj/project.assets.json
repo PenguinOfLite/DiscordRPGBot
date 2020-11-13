@@ -1463,11 +1463,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PenguinOfLite\\source\\repos\\DiscordRPGBot\\DiscordRPGBot\\DiscordRPGBot.csproj",
+      "projectUniqueName": "C:\\Users\\PenguinOfLite\\source\\repos\\DiscordRPGBot igen\\DiscordRPGBot\\DiscordRPGBot\\DiscordRPGBot.csproj",
       "projectName": "DiscordRPGBot",
-      "projectPath": "C:\\Users\\PenguinOfLite\\source\\repos\\DiscordRPGBot\\DiscordRPGBot\\DiscordRPGBot.csproj",
+      "projectPath": "C:\\Users\\PenguinOfLite\\source\\repos\\DiscordRPGBot igen\\DiscordRPGBot\\DiscordRPGBot\\DiscordRPGBot.csproj",
       "packagesPath": "C:\\Users\\PenguinOfLite\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PenguinOfLite\\source\\repos\\DiscordRPGBot\\DiscordRPGBot\\obj\\",
+      "outputPath": "C:\\Users\\PenguinOfLite\\source\\repos\\DiscordRPGBot igen\\DiscordRPGBot\\DiscordRPGBot\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
