@@ -144,21 +144,21 @@ namespace DiscordRPGBot
         }
     }
 
-    public class Tile
+    public class Tile 
     {
         public string name;
         public string description;
         public TILETYPES type;
         public List<DIRECTION> directions = new List<DIRECTION>();
         public bool visited;
-
+        public Queue<ITileBehaviour> behaviours;
         public Tile(string n, string d, TILETYPES t)
         {
             name = n;
             description = d;
             type = t;
             visited = false;
-
+             
 
             for (int i = 0; i < 4; i++)
             {
@@ -177,6 +177,7 @@ namespace DiscordRPGBot
 
         string OnFirstEnter()
         {
+            TileBehaviour();
             return ReadTile();
         }
 
@@ -195,8 +196,8 @@ namespace DiscordRPGBot
         }
 
         public void TileBehaviour()
-        { 
-            
+        {
+           behaviours.Dequeue().Play();
         }
     }
 
@@ -210,4 +211,6 @@ namespace DiscordRPGBot
     {
         UP, LEFT, DOWN, RIGHT
     }
+
+    
 }
