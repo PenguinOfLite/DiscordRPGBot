@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PenguinOfLite\\source\\repos\\DiscordRPGBot igen\\DiscordRPGBot\\DiscordRPGBot\\DiscordRPGBot.csproj": {}
+    "C:\\Users\\Kertész Gábor\\source\\repos\\DiscordRPGBot\\DiscordRPGBot\\DiscordRPGBot.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PenguinOfLite\\source\\repos\\DiscordRPGBot igen\\DiscordRPGBot\\DiscordRPGBot\\DiscordRPGBot.csproj": {
+    "C:\\Users\\Kertész Gábor\\source\\repos\\DiscordRPGBot\\DiscordRPGBot\\DiscordRPGBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PenguinOfLite\\source\\repos\\DiscordRPGBot igen\\DiscordRPGBot\\DiscordRPGBot\\DiscordRPGBot.csproj",
+        "projectUniqueName": "C:\\Users\\Kertész Gábor\\source\\repos\\DiscordRPGBot\\DiscordRPGBot\\DiscordRPGBot.csproj",
         "projectName": "DiscordRPGBot",
-        "projectPath": "C:\\Users\\PenguinOfLite\\source\\repos\\DiscordRPGBot igen\\DiscordRPGBot\\DiscordRPGBot\\DiscordRPGBot.csproj",
-        "packagesPath": "C:\\Users\\PenguinOfLite\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PenguinOfLite\\source\\repos\\DiscordRPGBot igen\\DiscordRPGBot\\DiscordRPGBot\\obj\\",
+        "projectPath": "C:\\Users\\Kertész Gábor\\source\\repos\\DiscordRPGBot\\DiscordRPGBot\\DiscordRPGBot.csproj",
+        "packagesPath": "C:\\Users\\Kertész Gábor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kertész Gábor\\source\\repos\\DiscordRPGBot\\DiscordRPGBot\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PenguinOfLite\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Kertész Gábor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -62,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

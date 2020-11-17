@@ -35,7 +35,7 @@ namespace DiscordRPGBot
             activeTile = tiles[2, 2];
             position = new Vector2(2, 2);
             activeTile.visited = true;
-
+            Tile.Behaviours = TileBehaviourHelper.GetTileBehaviours();
         }
 
         public string Move(DIRECTION direction)
@@ -146,12 +146,12 @@ namespace DiscordRPGBot
 
     public class Tile 
     {
-        public string name;
-        public string description;
+        public string name;             // public fields = bad practice 
+        public string description;      // use private fields + properties, or more commonly, auto-properties
         public TILETYPES type;
         public List<DIRECTION> directions = new List<DIRECTION>();
         public bool visited;
-        public Queue<ITileBehaviour> behaviours;
+        public static Queue<ITileBehaviour> Behaviours { get; set; } //use auto-properties wherever possible
         public Tile(string n, string d, TILETYPES t)
         {
             name = n;
@@ -175,6 +175,8 @@ namespace DiscordRPGBot
             return new Tile("", "This is a test tile. You have nothing to do here, you can go wherever you want", types[r.Next(0, 3)]);
         }
 
+        // I would move this up to the adventure class, it's the adventure's job to decide what happens when the player steps on  a tile
+        // (the tile class shouldn't know about how it's being used from the outside, it only represents a tile and holds its data)
         string OnFirstEnter()
         {
             TileBehaviour();
@@ -197,7 +199,15 @@ namespace DiscordRPGBot
 
         public void TileBehaviour()
         {
-           behaviours.Dequeue().Play();
+            try
+            {
+                Behaviours.Dequeue().Play();
+            }
+            catch (InvalidOperationException)
+            {
+                // the queue was empty, generate a random behaviour or handle it somehow
+                throw;      // delete this line obviously 
+            }
         }
     }
 
